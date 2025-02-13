@@ -1,6 +1,8 @@
 import React from 'react';
 
 function App() {
+	const name = 'Dasha';
+	const age = '18';
 	return ( 
 	<>
 		<div>
@@ -24,6 +26,11 @@ function App() {
 		</div>
 		<input />
 		<input /><input /><input />
+		<div>
+			<p>name: {name}</p>
+			<p>age: {age}</p>
+		</div>
+
 	</>
 );
 }
