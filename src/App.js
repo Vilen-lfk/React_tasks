@@ -7,14 +7,14 @@ function App() {
 	const age = '18';
 	const attr = 'block';
 	const str = <h1>TEXT</h1>
-	const str1 = <div>
+	const str1 = (<div>
 		<ul>
 			<li>text1</li>
 			<li>text2</li>
 			<li>text3</li>
 		</ul>
-	</div>
-	return ( 
+	</div>);
+	return str1;/*( 
 	<>
 		<div>
 		Vilen
@@ -58,7 +58,7 @@ function App() {
 		</div>
 		
 	</>
-);
+);*/
 }
 
 
