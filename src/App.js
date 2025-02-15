@@ -6,15 +6,23 @@ function App() {
 	const name = 'Dasha';
 	const age = '18';
 	const attr = 'block';
-	const str = <h1>TEXT</h1>
-	const str1 = (<div>
-		<ul>
-			<li>text1</li>
-			<li>text2</li>
-			<li>text3</li>
-		</ul>
-	</div>);
-	return /*str1;*/( 
+	const str = <h1>TEXT</h1>;
+	const num1 = 4;
+	const num2 = 2;
+	//26-27
+	let text;
+	const isAbult = false;
+
+	if (isAbult) {
+		text = <p>Пользователю уже есть 18 лет.</p>;
+	} else {
+		text = <p>"Пользователю ещё нет 18 лет.</p>;
+	}
+	//28
+	const age1 = 19;
+	//29
+	const isAuth = true
+	return ( 
 	<>
 		<div>
 		Vilen
@@ -51,8 +59,7 @@ function App() {
 		surname: <span>{obj.surname}</span>,
 		</p>
 		<div>
-			{str}
-			{str1}
+			{str}			
 		</div>
 		<table border="1">
 			<tr>
@@ -71,11 +78,21 @@ function App() {
 				<td>9</td>
 			</tr>
       </table>
-
-		
+	  Можно сюда под Фигурными скобками 
+	  записывать js-код 
+		<div>
+			result: {num1 ** num2}
+			<div>result корень num1: {Math.sqrt(num1)}</div>
+		</div>
+		{text}
+		{age1 > 18 ? <p>Вы совершеннолетний</p> : <p>Вы несовершеннолетний</p>}
+		{isAuth && <p> вы авторизированы</p>}
 	</>
 );
 }
 
 
 export default App;
+
+
+
