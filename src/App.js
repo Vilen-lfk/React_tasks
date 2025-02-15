@@ -14,7 +14,7 @@ function App() {
 			<li>text3</li>
 		</ul>
 	</div>);
-	return str1;/*( 
+	return /*str1;*/( 
 	<>
 		<div>
 		Vilen
@@ -35,8 +35,6 @@ function App() {
 				<li>Ervin</li>
 			</ul>
 		</div>
-		<input />
-		<input /><input /><input />
 		<div id = {attr}>
 			<p>name: {name}</p>
 			<p>age: {age}</p>
@@ -56,9 +54,27 @@ function App() {
 			{str}
 			{str1}
 		</div>
+		<table border="1">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+      </table>
+
 		
 	</>
-);*/
+);
 }
 
 
