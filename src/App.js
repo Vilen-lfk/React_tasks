@@ -16,12 +16,23 @@ function App() {
 	if (isAbult) {
 		text = <p>Пользователю уже есть 18 лет.</p>;
 	} else {
-		text = <p>"Пользователю ещё нет 18 лет.</p>;
+		text = <p>Пользователю ещё нет 18 лет.</p>;
 	}
 	//28
 	const age1 = 19;
-	//29
-	const isAuth = true
+	//29-30
+	const isAuth = true;
+	const is_Auth = false;
+	//31
+	function getDigitsSum(numbers) {
+		let sum = 0;
+		for (let i = 0; i < numbers.length; i++) {
+		  sum += numbers[i]; 
+		}
+		return sum;
+	  }
+	const numbers = [1, 2, 3];
+	const sum = getDigitsSum(numbers);
 	return ( 
 	<>
 		<div>
@@ -87,6 +98,8 @@ function App() {
 		{text}
 		{age1 > 18 ? <p>Вы совершеннолетний</p> : <p>Вы несовершеннолетний</p>}
 		{isAuth && <p> вы авторизированы</p>}
+		{!is_Auth && <p>пожалуйста, авторизируйтесь</p>}
+		Сумма чисел 123 = {sum}
 	</>
 );
 }
