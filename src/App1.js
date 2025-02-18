@@ -19,6 +19,28 @@ function App1() {
     function handleClick(event) {
         console.log(event.target); // Выводит элемент, на который кликнули
     }
+    
+    //36
+    function func(arg, event) {
+		console.log(arg, event);
+	}
+
+    function f(arg, event, avg) {
+		console.log(arg, event, avg);
+	}
+    //37
+    const arr = [
+		<li>1</li>,
+		<li>2</li>,
+		<li>3</li>,
+		<li>4</li>,
+		<li>5</li>,
+	];
+    //38
+    const arr1 = [];
+    for(let i = 0; i <= 5; i++){
+        arr.push(<li>{i}</li>)
+    }
 	return( 
     <>
     <div> 
@@ -33,7 +55,16 @@ function App1() {
 	</div>
     <button onClick={func}>cnopka</button>
     <button onClick={handleClick}>Кликни меня</button>
-
+    <p>36</p>
+    <button onClick={event => func('eee', event)}>ACT</button> 
+    <button onClick={event => func(event ,'eee')}>ACT1</button> 
+    <p>
+    <button onClick={event => f('eee', event, 'vilen')}>ACT</button> 
+    </p>
+    <p>37</p>
+    <p>{arr}</p>
+    <p>38</p>
+    <ul>{arr1}</ul>
     </>
     );
 }
