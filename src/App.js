@@ -9,6 +9,7 @@ function App() {
 	const str = <h1>TEXT</h1>;
 	const num1 = 4;
 	const num2 = 2;
+	
 	//26-27
 	let text;
 	const isAbult = false;
@@ -33,6 +34,18 @@ function App() {
 	  }
 	const numbers = [1, 2, 3];
 	const sum = getDigitsSum(numbers);
+	//32
+	function Sum(num){
+		let sum = 0;
+		let str = String(num);
+		for(let i = 0; i < str.length; i++){
+			sum += Number(str[i]);
+		}
+		return sum;
+	//33
+
+
+	}
 	return ( 
 	<>
 		<div>
@@ -100,6 +113,7 @@ function App() {
 		{isAuth && <p> вы авторизированы</p>}
 		{!is_Auth && <p>пожалуйста, авторизируйтесь</p>}
 		Сумма чисел 123 = {sum}
+		<p>Cумма цифр числа 12345:{Sum(12345)}</p>
 	</>
 );
 }
