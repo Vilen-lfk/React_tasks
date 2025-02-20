@@ -41,6 +41,36 @@ function App1() {
     for(let i = 0; i <= 5; i++){
         arr.push(<li>{i}</li>)
     }
+    //39 => 40
+    const mrr = ['a','b','c','d','e']
+    const res = mrr.map(function(item, index) {
+        return <li key={index}>{item}</li>
+    })
+    //41
+    const users = [
+        {name: 'Vlad ', surn: 'Antonento ', age: 30},
+        {name: 'Elnur ', surn: 'Abiltarov ', age: 31},
+        {name: 'Vilen ', surn: 'Karamurzayev ', age: 32},
+    ];
+    const prods = users.map(function(use, index){
+        return <li key = {index}>
+            <span>{use.name}</span>
+            <span>{use.surn}</span>
+            <span>{use.age}</span>
+        </li>
+    });
+    // 42
+    const lol = [
+        {id: 1, name: 'product1: ', cost: 100},
+	    {id: 2, name: 'product2: ', cost: 200},
+	    {id: 3, name: 'product3: ', cost: 300},
+    ]
+    const vlad = lol.map(function(item){
+        return <p key = {item.id}>
+            <span>{item.name}</span>
+            <span>{item.cost}</span>
+        </p>
+    })
 	return( 
     <>
     <div> 
@@ -65,6 +95,12 @@ function App1() {
     <p>{arr}</p>
     <p>38</p>
     <ul>{arr1}</ul>
+    <p>39 - 40</p>
+    <ul>{res}</ul>
+    <p>41</p>
+    <ul>{prods}</ul>
+    <p>42</p>
+    <p>{vlad}</p>
     </>
     );
 }
