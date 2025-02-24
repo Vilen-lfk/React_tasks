@@ -12,7 +12,10 @@ function App1() {
     const [surname, setSurname] = useState('Карамурзаев');
     const [age, setAge] = useState('19');
     
-
+    //53
+    const [ame, setAme] = useState('prod');
+  
+    
 	return( 
     <>
         <ul>
@@ -28,8 +31,27 @@ function App1() {
             <p>Фамилия:{surname}</p>
             <p>Возраст:{age}</p>
         </div>
+        <div>
+	        <span>{ame}</span>
+        	<button onClick={() => setAme('xxxx')}>btn</button>
+        </div>
+        <p>52-53</p>
+        <div>
+            <p>
+                <span>{name}</span>
+        	    <button onClick={() => setName('Даша')}>изменить</button>
+            </p>
+            <p>
+                <span>{surname}</span>
+                <button onClick={() => setSurname('Лысенко')}>изменить</button>
+            </p>
+            <p>
+                <span>{age}</span>
+                <button onClick={() => setAge('18')}>изменить</button>
+            </p>
+        </div>
     </>
     );
-}
 
+}
 export default App1;
