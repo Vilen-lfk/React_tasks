@@ -15,7 +15,12 @@ function App1() {
     //53
     const [ame, setAme] = useState('prod');
   
-    
+    //54
+    const [inCart, setInCart] = useState(false);  
+    const [users, setUsers] = useState(false); 
+    //55
+    const [count, setCount] = useState(0);
+
 	return( 
     <>
         <ul>
@@ -50,6 +55,22 @@ function App1() {
                 <button onClick={() => setAge('18')}>изменить</button>
             </p>
         </div>
+        <p>54 Пример</p>
+        <div>
+            <span>{inCart ? 'в корзине' : 'не в корзине'}</span>
+            <button onClick={() => setInCart(!inCart)}>btn</button>
+        <p>54 Задание</p>
+            <span>{users ? "забанен" : "не забанен"}</span>
+            <button onClick={() => setUsers(true)}>забанить</button>
+            <button onClick={() => setUsers(false)}>убрать бан</button>
+        </div>
+        <div>
+            <p>55</p>
+            <button onClick={() => setCount(count - 1)}>-</button>   
+            <span>{count}</span>
+		    <button onClick={() => setCount(count + 1)}>+</button>
+        </div>
+
     </>
     );
 
