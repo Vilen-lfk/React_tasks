@@ -20,6 +20,25 @@ function App1() {
     const [users, setUsers] = useState(false); 
     //55
     const [count, setCount] = useState(0);
+    //56
+    const [value, setValue] = useState('text');
+    function handleChange(event) {
+		setValue(event.target.value); // текущий текст инпута
+	}
+    const [mass, setMass] = useState('')
+    function M(eve) {
+		setMass(eve.target.value); // текущий текст инпута
+	}
+    const [arr, setArr] = useState('')
+    function A(ava) {
+		setArr(ava.target.value); // текущий текст инпута
+	}
+     //57
+     const [text, setText] = useState("");
+     function handleChange(e) {
+        setText(e.target.value);
+      }
+ 
 
 	return( 
     <>
@@ -70,7 +89,24 @@ function App1() {
             <span>{count}</span>
 		    <button onClick={() => setCount(count + 1)}>+</button>
         </div>
-
+        <div>
+            <h1>56 пример</h1>
+            <input value={value} onChange={handleChange}/>
+            <p>text: {value}</p>
+            
+            <h3>наиболее компактный вариант</h3>
+            <input value={value} onChange={event => setValue(event.target.value)} /> 
+            <p>text: {value}</p>
+           
+            <h1>Задание</h1>
+            <input mass={mass} onChange={M}/>
+            <p>
+            <input mass={arr} onChange={A}/>
+            </p>
+        </div>
+            <h1>57 пример</h1>
+            <input type="text" value={text} onChange={handleChange} />
+            <p>Количество символов: {text.length}</p>
     </>
     );
 
