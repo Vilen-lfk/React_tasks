@@ -71,6 +71,19 @@ function App1() {
             <span>{item.cost}</span>
         </p>
     })
+    //43
+    const use = [
+        {id: 1, name: 'Dacha', surn: 'Karamurzayeva', age: 30},
+        {id: 2, name: 'Vilen', surn: 'Karamurzayev', age: 31},
+        {id: 3, name: 'Melisa', surn: 'Karamurzayev', age: 32},
+    ]
+    const rows = use.map(function(item){
+        return <tr key = {item.id}>
+            <td>{item.name}</td>
+			<td>{item.surn}</td>
+            <td>{item.age}</td>
+        </tr>
+    })
 	return( 
     <>
     <div> 
@@ -101,6 +114,20 @@ function App1() {
     <ul>{prods}</ul>
     <p>42</p>
     <p>{vlad}</p>
+    <p>43</p>
+    <table>
+        <thead>
+            <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Возраст</th>
+            </tr>
+        </thead>
+        <tbody>
+            {rows}
+        </tbody>
+    </table>
+    <p>47</p>
     </>
     );
 }
