@@ -46,6 +46,37 @@ function App2(){
     function handleChange4(event){
         setValue4(+event.target.value);
     }
+    //60
+    const [num1, setNum1] = useState(0);
+    const [num2, setNum2] = useState(0);
+    const [res, setRes] = useState(0);
+
+    function handleNum1(event){
+        setNum1(event.target.value);
+    }
+    function handleNum2(event){
+        setNum2(event.target.value);
+    }
+    function handlePlus(){
+        setRes(Number(num1) + Number(num2));
+    }
+    function handleUmno(){
+        setRes(Number(num1) * Number(num2));
+    }
+    //61
+    const[vil, setVil] = useState('')
+    const[vil1, setVil1] = useState('')
+    const[r, setR] = useState('')
+        function handleVil(event){
+            setVil(event.target.value);
+        }
+        function handleVil1(event){
+            setVil1(event.target.value);
+        }
+        function handleR(){
+            setR(Number(vil) + Number(vil1));
+        }
+    
     return(
         <>
         <ul>
@@ -77,6 +108,22 @@ function App2(){
             <input value={value3} onChange={handleChange3} />
             <input value={value4} onChange={handleChange4} />
             <p>result: {(value1 + value2 + value3 + value4) / 4}</p>
+	    </div>
+        <div>
+            <h1>60 Задание</h1>
+            <input num={num1} onChange={handleNum1} />
+            <input num={num2} onChange={handleNum2} />
+            
+            <button onClick={handlePlus}>+</button>
+            <button onClick={handleUmno}>*</button>
+            <p>result: {res}</p>
+	    </div>
+        <div>
+            <h1>61 Задание</h1>
+            <textarea value={vil} onChange={handleVil}/>
+            <textarea value={vil1} onChange={handleVil1}/>
+            <button onClick={handleR}>+</button>
+            <p>{r}</p>
 	    </div>
         </>
     );
