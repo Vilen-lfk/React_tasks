@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import uuid from 'react-uuid';
 
+
 function App1() {
     //48
     const user = [
@@ -37,9 +38,8 @@ function App1() {
      const [text, setText] = useState("");
      function handleChange(e) {
         setText(e.target.value);
-      }
+     }
  
-
 	return( 
     <>
         <ul>
@@ -107,6 +107,7 @@ function App1() {
             <h1>57 пример</h1>
             <input type="text" value={text} onChange={handleChange} />
             <p>Количество символов: {text.length}</p>
+        
     </>
     );
 
