@@ -76,7 +76,36 @@ function App2(){
         function handleR(){
             setR(Number(vil) + Number(vil1));
         }
-    
+    //62
+    const [checked, setChecked] = useState(true);
+    function handleChange() {
+		setChecked(!checked); // инвертируем стейт
+	}
+    //--------
+    const [hello, setHello] = useState(true)
+    function hadleHello(){
+        setHello(!hello);
+    }
+    //--------
+    const [js, setJs] = useState(true)
+    function handleJs(){
+        setJs(!js);
+    }
+    const [css, setCss] = useState(true)
+    function handleCss(){
+        setCss(!css);
+    }
+    const [html, setHtml] = useState(true)
+    function handleHtml(){
+        setHtml(!html);
+    }
+    //63
+    let message;
+	if (checked) {
+		message = <p>Здесь расположен контент только для взрослых</p>;
+	} else {
+		message = <p>Еще молоко на губах не отсохло</p>;
+	}
     return(
         <>
         <ul>
@@ -125,6 +154,29 @@ function App2(){
             <button onClick={handleR}>+</button>
             <p>{r}</p>
 	    </div>
+        <div>
+            <h1>62 Пример</h1>
+    		<input type="checkbox" checked={true}  /> отмечен
+	    	<input type="checkbox" checked={false} /> не отмечен
+            <p>-----</p>
+            <p><input type="checkbox" checked={checked} onChange={handleChange}/></p>
+            <p>состояние: {checked ? 'отмечен' : 'не отмечен'}</p>
+            <h1>62 Задание</h1>
+            <p><input type="checkbox" checked={hello} onChange={hadleHello}/></p>
+            <p>{hello ? 'Привет' : 'Пока'}</p>
+            <h1>---------------</h1>
+            <p><input type="checkbox" checked={js} onChange={handleJs}/> js</p>
+            <p><input type="checkbox" checked={css} onChange={handleCss}/> css</p>
+            <p><input type="checkbox" checked={html} onChange={handleHtml}/> html</p>
+            <p>{js ? 'js' : ''} {css ? 'css' : ''} {html ? 'html' : ''} </p>
+	    </div>
+        <div>
+            <h1>63 Задание</h1>
+            <div>Вам есть 18?</div>
+		    <input type="checkbox" checked={checked} 
+			onChange={() => setChecked(!checked)} /> 
+		    <div>{message}</div>
+    	</div>
         </>
     );
 
