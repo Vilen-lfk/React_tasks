@@ -106,6 +106,18 @@ function App2(){
 	} else {
 		message = <p>Еще молоко на губах не отсохло</p>;
 	}
+    //64
+    const [ mass, setMass] = useState('');
+    function handleMass(event){
+        setMass(event.target.value);
+    }
+    //65
+    const citys = ['Симферополь', 'Евпатория', 'Саки', 'Бахчисарай'];
+    const [mel, setMel] = useState('')
+
+    const opt = citys.map((city, index) => {
+        return <option key = {index}>{city}</option>
+    });
     return(
         <>
         <ul>
@@ -177,6 +189,23 @@ function App2(){
 			onChange={() => setChecked(!checked)} /> 
 		    <div>{message}</div>
     	</div>
+        <div>
+            <h1>64 Задание</h1>
+            <select value = {mass} onChange={handleMass}>
+                <option>Нью-йорк</option>
+                <option>Берлин</option>
+                <option>Москва</option>
+                <option>Париж</option>
+            </select>
+            <p>Пользователь выбрал город {mass}</p>
+        </div>
+        <div>
+            <h1>65 Задание</h1>
+            <select value = {mel} onChange={(event) => setMel(event.target.value)}>
+                {opt}
+            </select>
+            <p>Ващ выбор: {mel}</p>
+        </div>
         </>
     );
 
