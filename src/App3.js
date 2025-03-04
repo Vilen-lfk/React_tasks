@@ -1,5 +1,21 @@
 import React, { useState } from 'react';
 
+function getSum(arr) {
+	let sum = 0;
+	
+	for (const elem of arr) {
+		sum += (+elem)/10;
+	}
+	
+	return sum;
+}
+//71
+const initDate = {
+	year:  2025,
+	month: 12,
+	day:   31,
+}
+
 function App() {
 	//66
 	const [value, setValue] = useState('');
@@ -17,8 +33,30 @@ function App() {
 	function chage(event){
 		setRadio(event.target.value);
 	}
-	//69
-	const [mass, setMass] = useState('text')
+	//70
+	const [notes, setNotes] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+	function changeHandler(index, event) {
+		setNotes([...notes.slice(0, index), 
+			event.target.value, ...notes.slice(index + 1)]); 
+		// общая функция-обработчик
+	}
+	const result = notes.map((note, index) => {
+		return <input
+			key={index}
+			value={note}
+			onChange={event => changeHandler(index, event)}
+		/>;
+	});
+	//71
+	const [obj, setObj] = useState(initDate);
+	function handle(prop, event) {
+		setObj({...obj, ...{[prop]: event.target.value}});
+	}
+	function getWeekday(year, month, day) {
+		const dateObj = new Date(year, month - 1, day); // JS использует 0-индексированные месяцы
+		return dateObj.toLocaleDateString("ru-RU", { weekday: "long" }); // Возвращает день недели на русском
+	  }
 	return( 
 	<>
 		<div>
@@ -74,7 +112,20 @@ function App() {
 			</p>
 		</div>
 		<div>
-			<input type="checkbox" defaultChecked={mass} />
+			<h1>70 Задание</h1>
+			<p>{result}</p>
+			{getSum(notes)}
+		</div>
+		<div>
+			<h1>71 Задание</h1>
+			📅 Дата:
+			<br />
+			<input value={obj.year} onChange={event => handle('year', event)} /> 
+			<input value={obj.month} onChange={event => handle('month', event)} /> 
+			<input value={obj.day} onChange={event => handle('day', event)} /> 
+			<br />
+			{obj.year}-{obj.month}-{obj.day}
+			<p>🗓 День недели: {getWeekday(obj.year, obj.month, obj.day)}</p>
 		</div>
 
 	</>);
