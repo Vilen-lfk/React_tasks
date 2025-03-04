@@ -11,6 +11,14 @@ function App() {
 	const options = texts.map((text, index) => {
 		return <option key={index} value={index}>{text}</option>;
 	});
+	//68
+	const [radio, setRadio] = useState(1)
+
+	function chage(event){
+		setRadio(event.target.value);
+	}
+	//69
+	const [mass, setMass] = useState('text')
 	return( 
 	<>
 		<div>
@@ -36,6 +44,37 @@ function App() {
 			<p>
 				ваш выбор: {vil}
 			</p>
+		</div>
+		<div>
+			<h1>68 Задание</h1>
+			<p>Ваш возраст:</p>
+			<input
+				type="radio"
+				name="radio"
+				value="17"
+				checked={radio === '17' ? true : false}
+				onChange={chage}
+			/> 17 лет
+			<input
+				type="radio"
+				name="radio"
+				value="18"
+				checked={radio === '18' ? true : false}
+				onChange={chage}
+			/> 18 лет
+			<input
+				type="radio"
+				name="radio"
+				value="19"
+				checked={radio === '19' ? true : false}
+				onChange={chage}
+			/> 19 лет
+			<p>
+				мне {radio}
+			</p>
+		</div>
+		<div>
+			<input type="checkbox" defaultChecked={mass} />
 		</div>
 
 	</>);
