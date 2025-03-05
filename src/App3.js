@@ -57,6 +57,16 @@ function App() {
 		const dateObj = new Date(year, month - 1, day); // JS использует 0-индексированные месяцы
 		return dateObj.toLocaleDateString("ru-RU", { weekday: "long" }); // Возвращает день недели на русском
 	  }
+	//73
+	const [note, setNote] = useState([1,2,3,4,5]);
+
+	const res = note.map((notes, index) => {
+		return <li key={index} > {notes}</li>
+	})
+	function addNote(){
+		const newNote = note.length + 1; //Новый элемент = следующий номер
+		setNote([...note, newNote]);
+	}
 	return( 
 	<>
 		<div>
@@ -127,6 +137,15 @@ function App() {
 			{obj.year}-{obj.month}-{obj.day}
 			<p>🗓 День недели: {getWeekday(obj.year, obj.month, obj.day)}</p>
 		</div>
+		<div>
+			<h1>73 Задание</h1>
+			<ul>
+				{note.map((note, index) => (
+				<li key={index}>{note}</li>
+				))}
+			</ul>
+			<button onClick={addNote}>Добавить элемент</button>
+    	</div>
 
 	</>);
 }
