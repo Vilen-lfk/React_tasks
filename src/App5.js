@@ -1,6 +1,11 @@
+import uuid from "react-uuid";
 import React, { useState } from 'react';
+import Product from './Product';
+
 
 function App() {
+	
+	//76
     const initNotes = [
         {
             id: 'GYi9G_uC4gBF1e2SixDvu',
@@ -21,6 +26,7 @@ function App() {
             prop3: 'value33',
         },
     ];
+	
     const [notes, setNotes] = useState(initNotes);
 	
     function doSmth(id) {
@@ -46,11 +52,65 @@ function App() {
 		</li>;
 	});
 	
-	return <div>
-		<ul>
-			{result}
-		</ul>
-	</div>;
+	//77
+	const use = [
+		{
+			id: uuid(),
+			name: 'name1',
+			desc: 'long description 1',
+			show: false,
+		},
+		{
+			id: uuid(),
+			name: 'name2',
+			desc: 'long description 2',
+			show: false,
+		},
+		{
+			id: uuid(),
+			name: 'name3',
+			desc: 'long description 3',
+			show: false,
+		},
+	];
+	function toggleDescription(id){
+		setUsers(
+			users.map((user)=>
+				user.id === id ? {...user, show: !user.show } : user
+			)
+		);
+	}
+	const [users, setUsers] = useState(use);
+	const res = users.map(user =>{
+		return <p key={user.id}>
+			{user.name},
+			{user.show && <i> {user.desc}</i>}
+			<button onClick = {() => toggleDescription(user.id)}>
+				{user.show ? 'Скрыть' : 'Показать'}
+			</button>
+		</p>
+	})
+	return(
+		<>
+		<div>
+			<h1>76 Задание</h1>
+			<ul>
+				{result}
+			</ul>
+		</div>
+		<div>
+			<h1>77 Задание</h1>
+			{res}
+		</div>
+		<div>
+			<h1>78-79 Задание</h1>
+			<Product />
+			<Product />
+		</div>
+		</>
+	); 
+	
 }
+
 
 export default App;
