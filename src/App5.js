@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import Product from './Product';
 import Employee from "./Employee";
 
-
-
 function App() {
 	
 	//76
@@ -106,6 +104,7 @@ function App() {
 		patronymic = {vils.patronymic}
 		salary = {vils.salary}/>
 	}) 
+
 	return(
 		<>
 		<div>
@@ -136,6 +135,7 @@ function App() {
 			<h1>84 Задача</h1>
 			{re}
 		</div>
+	
 		</>
 	); 
 	
