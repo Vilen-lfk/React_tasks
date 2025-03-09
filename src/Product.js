@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Product() {
+    
 	return (<>
         <h3>Мои юзеры:</h3>
         <ul>

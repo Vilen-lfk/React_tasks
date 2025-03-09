@@ -1,6 +1,8 @@
 import uuid from "react-uuid";
 import React, { useState } from 'react';
 import Product from './Product';
+import Employee from "./Employee";
+
 
 
 function App() {
@@ -90,6 +92,20 @@ function App() {
 			</button>
 		</p>
 	})
+	//82
+	const name = 'Elnur';
+	const surname = 'Abiltarov';
+	const  patronymic = 'Serverovich';
+	const salary = '85000';
+	//84
+	const re = users.map(vils => {
+		return <Employee 
+		key = {vils.id} 
+		name = {vils.name} 
+		surname ={vils.surname} 
+		patronymic = {vils.patronymic}
+		salary = {vils.salary}/>
+	}) 
 	return(
 		<>
 		<div>
@@ -103,9 +119,22 @@ function App() {
 			{res}
 		</div>
 		<div>
-			<h1>78-79 Задание</h1>
+			<h1>78-80 Задание</h1>
 			<Product />
 			<Product />
+		</div>
+		<div>
+			<h1>81 Задание</h1>
+			<Employee name = 'Vilen' surname = 'Karamurzayev'  patronymic = 'Rustemovich' salary = '80000'/>
+			<Employee name = 'Dasha' surname = 'Karamurzayeva'  patronymic = 'Ianovna' salary = '90000'/>
+		</div>
+		<div>
+			<h1>82 Задание</h1>
+			<Employee name ={name} surname = {surname} patronymic ={patronymic} salary = {salary}/>
+		</div>
+		<div>
+			<h1>84 Задача</h1>
+			{re}
 		</div>
 		</>
 	); 
