@@ -3,6 +3,7 @@ import uuid from "react-uuid";
 import TempInp from "./TempInp";
 import Verdict from "./Verdict";
 import './styles.css';
+import { styles } from "./styles";
 
 function App() {
     //95-98
@@ -21,6 +22,12 @@ function App() {
                 <button class="class3">text</button>
                 <p class="class4">text</p>
 		    </div>
+            <div style={styles.class5}>
+                <h1>100 Задание</h1>
+                <p style={styles.class6}>TEXT</p>
+                <p style={styles.class7}>TEXT</p>
+                <p style={styles.class8}>TEXT</p>
+            </div>
 
         </>
         
