@@ -4,6 +4,7 @@ import TempInp from "./TempInp";
 import Verdict from "./Verdict";
 import './styles.css';
 import { styles } from "./styles";
+import Block from "./Block";
 import styled from 'styled-components';
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
 
     //-----------------------------------------103
     const Container = styled.div`
-	width: 200px;
+	width: 300px;
 	border: 2px solid brown;
 	padding: 10px;
 	text-align: center;
@@ -52,7 +53,23 @@ const Text3 = styled.p`
 	font-weight: bold;
 	color: white;
 `;
+    //105-------------------------------------------
+    
+    const Input = styled.input`
+    background: ${(props) => (props.first ? "yellow" : "green")};
+    margin: 5px;
+    font-size: 18px;
+`;
 
+    const Button = styled.button`
+    background: ${(props) => (props.warn ? "yellow" : "green")};
+    color: ${(props) => (props.warn ? "red" : "white")};
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+`;
     return (
         <>
             <div>
@@ -126,6 +143,21 @@ const Text3 = styled.p`
 			        <Text3>text</Text3>
 		        </Container>
             </div>
+            <div>
+                <h1>104 Задача</h1>
+                <Block />
+            </div>
+            <div>
+                <h1>105 Задача</h1>
+                <Container>
+                    <Input first />
+                    <Input placeholder="name" type="text" />
+                    <Input type="password" />
+                    <Button>Submit</Button>
+                    <Button warn>Warning</Button>
+                </Container>
+            </div>
+            
         </>
         
     );
